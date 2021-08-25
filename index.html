@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="toggleModal">Show Modal</button>
+        <!-- Un SLOT permite inyectar HTML a un componente desde el PADRE -->
+        <modal v-on:closemodal="toggleModal" v-show="showModal" :title="name">
+            <template slot="text-body">
+                <p>Bienvenido a DerumSoft, una empresa comprometida con el cliente</p>
+            </template>   
+            <template slot="before">
+                <p>i am before title</p>
+            </template>           
+        </modal>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
